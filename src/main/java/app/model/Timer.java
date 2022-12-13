@@ -1,8 +1,14 @@
 package app.model;
 
-public class Timer {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
-    private Long nanoTime = System.nanoTime();
+@Component("timerBean")
+public class Timer extends Animal {
+
+    private final Long nanoTime = System.nanoTime();
 
     public Long getTime() {
         return nanoTime;
